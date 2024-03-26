@@ -121,7 +121,18 @@ int main(void) {
         Escribir un programa que imprima todos los números pares entre dos números que se le pida al usuario.
       */
     case 4: {
-      int i = 0;
+      int num1, num2;
+      int par;
+
+      do{
+        if(num2 % 2 != 0){
+            par = num2 - 1;
+            printf("%d", & par);
+        }else {
+            par = num2 - 2;
+            printf("%d", &par);
+        }
+      }while(par > num1);
     }
     default: {
       printf("Error :(");
