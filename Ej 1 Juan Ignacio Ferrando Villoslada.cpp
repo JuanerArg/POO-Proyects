@@ -134,6 +134,21 @@ int main(void) {
     	}
   		break;
 	}
+  case 5:{
+    int velocidad;
+    int kilometroInicial = 70;
+    int distancia = 80;
+    int kilometroEncuentro;
+
+    printf("Ingrese la velocidad de los coches (en km/h): ");
+    scanf("%d", &velocidad);
+
+    double tiempo = (double)distancia / velocidad;
+    kilometroEncuentro = kilometroInicial + tiempo * velocidad;
+
+    printf("Los coches se encontrarán en el kilómetro %d\n", kilometroEncuentro);
+    break;
+  }
     default: {
       printf("Error :(");
       break;
