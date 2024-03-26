@@ -149,6 +149,11 @@ int main(void) {
     printf("Los coches se encontrarán en el kilómetro %d\n", kilometroEncuentro);
     break;
   }
+    case 6:{
+      printf("Saliendo del Programa...");
+      printf("\nGoodbye ;p");
+      break;
+    }
     default: {
       printf("Error :(");
       break;
