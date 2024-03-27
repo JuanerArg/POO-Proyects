@@ -14,6 +14,7 @@ int main(void){
 int menu_option;
 
 do{
+    printf("\n---------------------------------------\n");
     printf("1.Ejercicio 1\n2.Ejercicio 2\n3.Ejercicio 3\n4.Salir\n");
 
     scanf("%d", &menu_option);

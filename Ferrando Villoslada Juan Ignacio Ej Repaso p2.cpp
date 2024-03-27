@@ -21,11 +21,13 @@ int main(void){
     int menu_option;
 
     do{
+        printf("\n---------------------------------------\n");
         printf("1.Ej1\n2.Ej2\n3.Ej3\n4.Ej4\n5.Ej5\n6.Salir\n");
         scanf("%d", &menu_option);
 
         switch(menu_option){
             case 1:{
+                printf("\n---------------------------------------\n");
                 int a = 1, b = 2, c = 3;
                 int x = 87;
 
@@ -39,6 +41,7 @@ int main(void){
                 break;
             }
             case 2:{
+                printf("\n---------------------------------------\n");
                 int a, b, c;
                 float promedio;
 
@@ -53,6 +56,7 @@ int main(void){
                 break;
             }
             case 3:{
+                printf("\n---------------------------------------\n");
                 int num1;
                 printf("Ingresar un numero positivo mayor a 0: \n");
                 scanf("%d", &num1);
@@ -66,36 +70,48 @@ int main(void){
                 break;
             }
             case 4:{
+                printf("\n---------------------------------------\n");
                 int nota1, nota2, nota3, nota4, notaT;
-                printf("Ingrese las ultimas 4 notas")
+                printf("Ingrese las ultimas 4 notas");
                     scanf("%d", &nota1);
-                        printf("\n");
                     scanf("%d", &nota2);
-                        printf("\n");
                     scanf("%d", &nota3);
-                        printf("\n");
                     scanf("%d", &nota4);
-                        printf("\n");
                     scanf("%d", &notaT);
-                        printf("\n");
 
                 float promedio = (nota1 + nota2 + nota3 + nota4 + notaT) / 5;
 
                 if(promedio >= 6){
                     printf("El alumno aprobo\n");
                 }else printf("El alumno no aprobo\n");
-                
-                break;
-            }
-            case 5:{
-                
 
                 break;
             }
+            case 5:{
+                printf("\n---------------------------------------\n");
+                int nota;
+
+                printf("Ingrese su nota: ");
+                scanf("%d", &nota);
+
+                if(nota >= 6){
+                    printf("Aprobado\n");
+                    if(nota >= 8){
+                        printf("Felicitaciones!!!\n");
+                    }
+                }else{
+                    printf("Reprobado\n");
+                    if(nota <= 1){
+                        printf("Debes esforzarte mas >:(\n");
+                    }
+                }
+                break;
+            }
             case 6:{
+                printf("\n---------------------------------------\n");
                 printf("Saliendo del Programa...");
                 printf("\nGoodbye ;p");
-                
+
                 break;
             }
         }
