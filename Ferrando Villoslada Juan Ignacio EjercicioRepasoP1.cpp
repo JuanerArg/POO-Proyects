@@ -14,12 +14,7 @@ int main(void){
 int menu_option;
 
 do{
-    printf("
-        1.Ejercicio 1\n
-        2.Ejercicio 2\n
-        3.Ejercicio 3\n
-        4.Salir\n
-    ");
+    printf("1.Ejercicio 1\n2.Ejercicio 2\n3.Ejercicio 3\n4.Salir\n");
 
     scanf("%d", &menu_option);
 
@@ -30,17 +25,17 @@ do{
             int datos;
 
             printf("Tenes wifi? (1 = si || 0 = no) \n");
-            scanf("%d", wifi);
+            scanf("%d", &wifi);
             
             printf("Tenes datos? (1 = si || 0 = no)\n");
-            scanf("%d", datos);
+            scanf("%d", &datos);
 
             if(wifi == 1 || datos == 1){
                 printf("Escribe tu mensaje: \n");
-                scanf("%[^\n]s", mensaje);
+                scanf(" %[^\n]", mensaje);
             }
 
-            printf("Mensaje enviado: %s", mensaje);
+            printf("Mensaje enviado: %s\n", mensaje);
             break;
         }
         case 2:{
@@ -53,8 +48,8 @@ do{
             printf("\n");
 
             if(nota1 >= 7 && nota2 >= 8){
-                printf("Apto");
-            }else printf("No Apto");
+                printf("Apto\n");
+            }else printf("No Apto\n");
             break;
         }
         case 3:{
@@ -67,7 +62,8 @@ do{
                 sueldo = sueldo * 1.15;
             }else sueldo = sueldo * 1.12;
 
-            printf("%f", sueldo);
+            printf("Tu sueldo con el aumento es de %2.f\n", sueldo);
+            break;
         }
         case 4:{
             printf("Saliendo del Programa...");
