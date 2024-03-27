@@ -61,7 +61,18 @@ do{
 
             printf("Cual es tu sueldo? \n");
             scanf("%f", &sueldo);
+
+            if(sueldo < 8000){
+                sueldo = sueldo * 1.15;
+            }else sueldo = sueldo * 1.12;
+
+            printf("%f", sueldo);
+        }
+        case 4:{
+            printf("Saliendo del Programa...");
+            printf("\nGoodbye ;p");
+
+            break;
         }
     }
-
 }while(menu_option != 4)

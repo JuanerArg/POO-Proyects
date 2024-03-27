@@ -1,11 +1,33 @@
-/*
-Un vendedor recibe un sueldo base más un 10% extra por comisión de sus ventas,
-el vendedor desea saber cuánto dinero obtendrá por concepto de comisiones por
-las tres ventas que realiza en el mes y el total que recibirá en el mes tomando
-en cuenta su sueldo base y comisiones
-*/
-
 #include <stdio.h>
+
+/*
+El director de una escuela está organizando un viaje de estudios, y requiere determinar cuánto debe cobrar a cada alumno 
+y cuánto debe pagar a la compañía de viajes por el servicio. La forma de cobrar es la siguiente: 
+Si son 100 alumnos o más, el costo por cada alumno es de $ 500, 
+de 50 a 99 alumnos, el costo es de $ 400  
+y  de 30 a 49, de $ 300. 
+Pero si son menos de 30, el costo del alquiler del micro es de $ 6000.- sin importar el número de alumnos. 
+
+Un vendedor recibe un sueldo base más un 10% extra por comisión de sus ventas, 
+el vendedor desea saber cuánto dinero obtendrá por concepto de comisiones 
+por las tres ventas que realiza en el mes y el total que recibirá en el mes 
+tomando en cuenta su sueldo base y comisiones
+
+
+Un alumno desea saber cuál será su calificación final en la materia de Algoritmos. Dicha calificación se compone de los siguientes porcentajes:
+55% del promedio de sus tres calificaciones parciales.
+30% de la calificación del examen final.
+15% de la calificación de un trabajo final.
+
+
+Escribir un programa que imprima todos los números pares entre dos números que se le pida al usuario.
+
+
+Una persona se encuentra en el kilómetro 70 de una carretera, otra se encuentra en el km 150, 
+los coches tienen sentido opuesto y tienen la misma velocidad. 
+Realizar un programa para determinar en qué kilómetro de esa carretera se encontrarán.
+
+*/
 
 int main(void) {
   int menu_option;
@@ -84,11 +106,6 @@ int main(void) {
 
       break;
     }
-    /*Un alumno desea saber cuál será su calificación final en la materia de
-    Algoritmos. Dicha calificación se compone de los siguientes porcentajes: 55%
-    del promedio de sus tres calificaciones parciales. 30% de la calificación
-    del examen final. 15% de la calificación de un trabajo final
-    */
     case 3: {
       int i = 0;
       int calificacionp = 0;
@@ -117,9 +134,6 @@ int main(void) {
 
       break;
     }
-      /*
-        Escribir un programa que imprima todos los números pares entre dos números que se le pida al usuario.
-      */
 	case 4: {
 		int num1, num2;
 
