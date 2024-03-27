@@ -53,13 +53,38 @@ int main(void){
                 break;
             }
             case 3:{
-                
+                int num1;
+                printf("Ingresar un numero positivo mayor a 0: \n");
+                scanf("%d", &num1);
+
+                if(num1 > 0){
+                    if(num1 % 2 == 0){
+                        printf("El numero %d es par\n", num1);
+                    }else printf("El numero %d es impar\n", num1);
+                }else printf("Error, el numero no es mayor a 0\n");
 
                 break;
             }
             case 4:{
-                
+                int nota1, nota2, nota3, nota4, notaT;
+                printf("Ingrese las ultimas 4 notas")
+                    scanf("%d", &nota1);
+                        printf("\n");
+                    scanf("%d", &nota2);
+                        printf("\n");
+                    scanf("%d", &nota3);
+                        printf("\n");
+                    scanf("%d", &nota4);
+                        printf("\n");
+                    scanf("%d", &notaT);
+                        printf("\n");
 
+                float promedio = (nota1 + nota2 + nota3 + nota4 + notaT) / 5;
+
+                if(promedio >= 6){
+                    printf("El alumno aprobo\n");
+                }else printf("El alumno no aprobo\n");
+                
                 break;
             }
             case 5:{
