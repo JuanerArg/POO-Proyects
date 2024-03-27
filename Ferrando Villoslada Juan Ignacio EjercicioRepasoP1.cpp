@@ -1,7 +1,5 @@
 #include<stdio.h>
 
-int menu_option;
-
 /*1-Enviar un mensaje de texto o whatsApp desde el teléfono celular. 
 Se deberá verificar que haya crédito o servicio de Wifi para poder realizar la operación, según corresponda.
 
@@ -11,6 +9,9 @@ Se deberá mostrar en pantalla la palabra “Apto” o “No apto”.
 
 3-Se ingresa el sueldo de un trabajador y se aplica un aumento del 15% si su sueldo es inferior a $8.000 y 12% en caso contrario. 
 Luego, mostrar el nuevo sueldo del trabajador.*/
+
+int main(void){
+int menu_option;
 
 do{
     printf("
@@ -75,4 +76,5 @@ do{
             break;
         }
     }
-}while(menu_option != 4)
+}while(menu_option != 4);
+}
