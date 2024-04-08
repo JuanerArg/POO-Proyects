@@ -46,7 +46,7 @@ int main(void){
         scanf("%d", &menu_option);
 
         switch(menu_option){
-            case 1:{
+            case 2:{
                 printf("\n---------------------------------------\n");
 
                 float sueldo;
@@ -75,7 +75,7 @@ int main(void){
 
                 break;
             }
-            case 2:{
+            case 1:{
                 printf("\n---------------------------------------\n");
 
                 int i = 0;
