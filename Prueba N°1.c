@@ -14,7 +14,7 @@ int main() {
 
     switch (ejercicio) {
     case 1: {
-      // verificamos si el año es bisiesto o no
+      // verificamos si el aÃ±o es bisiesto o no
       int anio;
       printf("Ingrese un anio: ");
       scanf("%d", &anio);
@@ -117,7 +117,7 @@ int main() {
     case 5: {
       int precioUva;
       int tipo;   // si es 1 es tipo A y si es 2 es tipo B
-      int tamanio; // Tamaños 1 y 2
+      int tamanio; // TamaÃ±os 1 y 2
       int kilos;
       int preciofinal;
 
@@ -129,10 +129,10 @@ int main() {
         printf("Tipo de uva no valido");
         break;
       }
-      printf("Que tamaño de uva vas a vender? 1 o 2");
+      printf("Que tamaÃ±o de uva vas a vender? 1 o 2");
       scanf("%d", &tamanio);
       if (tamanio != 1 && tamanio != 2) {
-        printf("Tamaño de uva no valido");
+        printf("TamaÃ±o de uva no valido");
         break;
       }
       if (tipo == 1) {
