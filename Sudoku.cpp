@@ -136,20 +136,24 @@ public:
         }
     }
 
-    // Imprimir el Sudoku en formato legible
+    // Imprimir el Sudoku en formato legible con etiquetas de filas y columnas
     void imprimirSudoku() const {
+        cout << "    1 2 3   4 5 6   7 8 9" << endl;
+        cout << "  +-------+-------+-------+" << endl;
         for (int fila = 0; fila < 9; ++fila) {
             if (fila % 3 == 0 && fila != 0) {
-                cout << "------+-------+------" << endl;
+                cout << "  +-------+-------+-------+" << endl;
             }
+            cout << fila + 1 << " | ";
             for (int columna = 0; columna < 9; ++columna) {
                 if (columna % 3 == 0 && columna != 0) {
                     cout << "| ";
                 }
                 cout << (tablero[fila][columna] == 0 ? "." : to_string(tablero[fila][columna])) << " ";
             }
-            cout << endl;
+            cout << "|" << endl;
         }
+        cout << "  +-------+-------+-------+" << endl;
     }
 
     // Permitir al usuario ingresar un valor en el tablero
