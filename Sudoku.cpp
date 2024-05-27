@@ -7,14 +7,17 @@ using namespace std;
 
 class Sudoku {
 private:
-    vector<vector<int>> tablero;
+    vector<vector<int>> tablero; // Matriz 9x9 para el tablero de Sudoku
 
+    // Verifica si es seguro colocar un número en la posición dada
     bool esSeguro(int fila, int columna, int num) const {
+        // Verificar la fila y columna
         for (int x = 0; x < 9; ++x) {
             if (tablero[fila][x] == num || tablero[x][columna] == num) {
                 return false;
             }
         }
+        // Verificar la subcuadro 3x3
         int inicioFila = fila - fila % 3;
         int inicioColumna = columna - columna % 3;
         for (int i = 0; i < 3; ++i) {
@@ -27,43 +30,46 @@ private:
         return true;
     }
 
+    // Resolver el Sudoku usando backtracking
     bool resolverSudoku() {
         for (int fila = 0; fila < 9; ++fila) {
             for (int columna = 0; columna < 9; ++columna) {
-                if (tablero[fila][columna] == 0) {
+                if (tablero[fila][columna] == 0) { // Encontrar una celda vacía
                     for (int num = 1; num <= 9; ++num) {
                         if (esSeguro(fila, columna, num)) {
-                            tablero[fila][columna] = num;
+                            tablero[fila][columna] = num; // Colocar el número
                             if (resolverSudoku()) {
                                 return true;
                             }
-                            tablero[fila][columna] = 0;
+                            tablero[fila][columna] = 0; // Deshacer y probar el siguiente número
                         }
                     }
-                    return false;
+                    return false; // No se puede colocar ningún número
                 }
             }
         }
-        return true;
+        return true; // Sudoku resuelto
     }
 
+    // Verificar si el Sudoku tiene una única solución
     bool tieneUnicaSolucion() {
         int soluciones = 0;
         contarSoluciones(soluciones);
         return soluciones == 1;
     }
 
+    // Contar el número de soluciones posibles para el Sudoku
     bool contarSoluciones(int& soluciones) {
         for (int fila = 0; fila < 9; ++fila) {
             for (int columna = 0; columna < 9; ++columna) {
-                if (tablero[fila][columna] == 0) {
+                if (tablero[fila][columna] == 0) { // Encontrar una celda vacía
                     for (int num = 1; num <= 9; ++num) {
                         if (esSeguro(fila, columna, num)) {
-                            tablero[fila][columna] = num;
+                            tablero[fila][columna] = num; // Colocar el número
                             contarSoluciones(soluciones);
-                            tablero[fila][columna] = 0;
+                            tablero[fila][columna] = 0; // Deshacer
                             if (soluciones > 1) {
-                                return false;
+                                return false; // Más de una solución encontrada
                             }
                         }
                     }
@@ -71,10 +77,11 @@ private:
                 }
             }
         }
-        soluciones++;
+        soluciones++; // Incrementar el contador de soluciones
         return soluciones <= 1;
     }
 
+    // Eliminar celdas aleatoriamente del Sudoku asegurando que permanezca con una única solución
     void eliminarCeldas(int numCeldasAEliminar) {
         random_device rd;
         mt19937 gen(rd());
@@ -90,34 +97,37 @@ private:
             int respaldo = tablero[fila][columna];
             tablero[fila][columna] = 0;
 
+            // Verificar si la eliminación mantiene una única solución
             if (!tieneUnicaSolucion()) {
-                tablero[fila][columna] = respaldo;
+                tablero[fila][columna] = respaldo; // Restaurar si no tiene única solución
             } else {
-                --numCeldasAEliminar;
+                --numCeldasAEliminar; // Decrementar el contador de celdas a eliminar
             }
         }
     }
 
 public:
+    // Constructor para inicializar el tablero
     Sudoku() : tablero(9, vector<int>(9, 0)) {}
 
+    // Generar un nuevo Sudoku
     void generarSudoku() {
-        tablero = vector<vector<int>>(9, vector<int>(9, 0));
-        resolverSudoku();
+        tablero = vector<vector<int>>(9, vector<int>(9, 0)); // Reiniciar el tablero
+        resolverSudoku(); // Resolver el Sudoku completamente
 
-        // Copia del tablero completo
-        vector<vector<int>> tableroCompleto = tablero;
+        vector<vector<int>> tableroCompleto = tablero; // Copia del tablero completo
 
         // Intentar eliminar celdas y verificar la unicidad de la solución
         eliminarCeldas(40);
 
-        // Si no se logró un sudoku válido, restaurar el tablero completo y volver a intentar
+        // Si no se logró un Sudoku válido, restaurar el tablero completo y volver a intentar
         if (!tieneUnicaSolucion()) {
             tablero = tableroCompleto;
             eliminarCeldas(40);
         }
     }
 
+    // Imprimir el Sudoku en formato legible
     void imprimirSudoku() const {
         for (int fila = 0; fila < 9; ++fila) {
             if (fila % 3 == 0 && fila != 0) {
@@ -136,9 +146,8 @@ public:
 
 int main() {
     Sudoku sudoku;
-    sudoku.generarSudoku();
+    sudoku.generarSudoku(); // Generar un Sudoku
     cout << "Sudoku generado:" << endl;
-    sudoku.imprimirSudoku();
+    sudoku.imprimirSudoku(); // Imprimir el Sudoku generado
     return 0;
 }
-
