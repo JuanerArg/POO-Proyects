@@ -17,7 +17,7 @@ private:
                 return false;
             }
         }
-        // Verificar la subcuadro 3x3
+        // Verificar el subcuadro 3x3
         int inicioFila = fila - fila % 3;
         int inicioColumna = columna - columna % 3;
         for (int i = 0; i < 3; ++i) {
@@ -142,6 +142,37 @@ public:
             cout << endl;
         }
     }
+
+    // Permitir al usuario ingresar un valor en el tablero
+    bool ingresarValor(int fila, int columna, int num) {
+        if (fila < 0 || fila >= 9 || columna < 0 || columna >= 9 || num < 1 || num > 9) {
+            cout << "Entrada inválida. Intente de nuevo." << endl;
+            return false;
+        }
+        if (tablero[fila][columna] != 0) {
+            cout << "La celda ya está ocupada. Intente de nuevo." << endl;
+            return false;
+        }
+        if (esSeguro(fila, columna, num)) {
+            tablero[fila][columna] = num;
+            return true;
+        } else {
+            cout << "Movimiento inválido. Intente de nuevo." << endl;
+            return false;
+        }
+    }
+
+    // Verificar si el tablero está completamente resuelto
+    bool estaResuelto() const {
+        for (int fila = 0; fila < 9; ++fila) {
+            for (int columna = 0; columna < 9; ++columna) {
+                if (tablero[fila][columna] == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 };
 
 int main() {
@@ -149,5 +180,16 @@ int main() {
     sudoku.generarSudoku(); // Generar un Sudoku
     cout << "Sudoku generado:" << endl;
     sudoku.imprimirSudoku(); // Imprimir el Sudoku generado
+
+    int fila, columna, num;
+    while (!sudoku.estaResuelto()) {
+        cout << "Ingrese la fila, columna y número (1-9) separados por espacios: ";
+        cin >> fila >> columna >> num;
+        if (sudoku.ingresarValor(fila - 1, columna - 1, num)) { // Ajustar a índice 0
+            sudoku.imprimirSudoku();
+        }
+    }
+
+    cout << "¡Felicitaciones! Has resuelto el Sudoku." << endl;
     return 0;
 }
