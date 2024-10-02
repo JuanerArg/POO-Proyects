@@ -6,27 +6,43 @@ Un buen truco para calcular la raíz cuadrada del numero e ir comprobando que si
 NOTA: Si se introduce un numero menor o igual que 1, directamente es no primo.
 */
 import java.util.Scanner;
-import InputMismatchException;
+import java.util.InputMismatchException;
+
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
         int n = 0;
-        int divisor = 2;
-        int rta = 0;
 
-        System.out.println("Ingrese un numero para saber si es primo o no");
-        try{
+        // Pide al usuario un número entero
+        System.out.println("Ingrese un número para saber si es primo o no:");
+        try {
             n = input.nextInt();
-        }catch(InputMismatchException e){
-            System.out.println("Error. Ingrese un numero");
+        } catch (InputMismatchException e) {
+            System.out.println("Error. Ingrese un número entero.");
+            input.close();
+            return;
         }
 
-        do{
-            rta = n % divisor;
-            divisor++;
-        }while(rta != 0);
+        // Verifica si el número es menor o igual a 1
+        if (n <= 1) {
+            System.out.println(n + " no es un número primo.");
+        } else {
+            // Verifica si el número es primo
+            boolean esPrimo = true;
+            for (int divisor = 2; divisor <= Math.sqrt(n); divisor++) {
+                if (n % divisor == 0) {
+                    esPrimo = false;
+                    break;
+                }
+            }
 
+            // Muestra el resultado
+            if (esPrimo) {
+                System.out.println(n + " es un número primo.");
+            } else {
+                System.out.println(n + " no es un número primo.");
+            }
+        }
 
         input.close();
     }
