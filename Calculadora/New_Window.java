@@ -19,6 +19,8 @@ public class New_Window extends JFrame {
         panel.setBounds(0, 0, 400, 300);
 
         JTextField IngresoDeNumeros = new JTextField(20);
+        String IngresoDeNumerosText = "";
+        IngresoDeNumeros.setText(IngresoDeNumerosText);
         IngresoDeNumeros.setBounds(0, 0, 200, 30);
         panel.add(IngresoDeNumeros);
 
@@ -61,6 +63,69 @@ public class New_Window extends JFrame {
         JButton nueve = new JButton("9");
         nueve.setBounds(100,90,50,30);
         panel.add(nueve);
+
+        uno.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                IngresoDeNumeros.setText(IngresoDeNumeros.getText()+e.getActionCommand());
+            }
+        });
+
+        dos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                IngresoDeNumeros.setText(IngresoDeNumeros.getText()+e.getActionCommand());
+            }
+        });
+
+        tres.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                IngresoDeNumeros.setText(IngresoDeNumeros.getText()+e.getActionCommand());
+            }
+        });
+
+        cuatro.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                IngresoDeNumeros.setText(IngresoDeNumeros.getText()+e.getActionCommand());
+            }
+        });
+
+        cinco.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                IngresoDeNumeros.setText(IngresoDeNumeros.getText()+e.getActionCommand());
+            }
+        });
+
+        seis.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                IngresoDeNumeros.setText(IngresoDeNumeros.getText()+e.getActionCommand());
+            }
+        });
+
+        siete.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                IngresoDeNumeros.setText(IngresoDeNumeros.getText()+e.getActionCommand());
+            }
+        });
+
+        ocho.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                IngresoDeNumeros.setText(IngresoDeNumeros.getText()+e.getActionCommand());
+            }
+        });
+
+        nueve.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                IngresoDeNumeros.setText(IngresoDeNumeros.getText()+e.getActionCommand());
+            }
+        });
 
         //JLabel label = new JLabel();
         //label.setBounds(100, 200, 200, 20);
